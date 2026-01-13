@@ -9,6 +9,13 @@
         .container { max-width: 1200px; margin: 0 auto; }
         h2 { text-align: center; color: #2c3e50; margin-bottom: 25px; }
         
+        /* 免責事項スタイル */
+        .disclaimer {
+            background: #fff5f5; border-left: 5px solid #fc8181; padding: 15px; margin-bottom: 25px;
+            border-radius: 8px; font-size: 14px; color: #c53030;
+        }
+        .disclaimer strong { display: block; margin-bottom: 5px; }
+
         .controls { 
             display: flex; flex-wrap: wrap; gap: 25px; margin-bottom: 25px; padding: 25px; 
             background: #ffffff; border-radius: 12px; border: 1px solid #e1e4e8; 
@@ -60,6 +67,11 @@
 <div class="container">
     <h2>グローバル経済・デジタル指標分析 (2005-2025)</h2>
     
+    <div class="disclaimer">
+        <strong>⚠️ データに関するご注意</strong>
+        本ダッシュボードのデータは、各国の公的統計およびIMFの予測値をベースに、生成AIを用いて収集・整理・補完を行っています。大局的なトレンドの把握を目的としており、通貨換算や推計処理により数値の細部で実際の統計と差異が生じている可能性があります。厳密な数値を必要とする場合は、各統計局の一次資料をご参照ください。
+    </div>
+
     <div class="controls">
         <div class="control-group">
             <strong>比較対象の国を選択:</strong>
@@ -85,7 +97,7 @@
     <div class="source-info">
         <h3>📊 データソース・各国統計局公式サイト</h3>
         <div class="main-source">
-            💡 <strong>注記:</strong> 過去の実績値は各国の統計局データに基づきます。直近および2025年の予測値は <a href="https://www.imf.org/en/Publications/WEO/weo-database/2024/October" target="_blank">IMF World Economic Outlook (Oct 2024)</a> の数値を参照しています。
+            💡 <strong>出典構成:</strong> 2023年までの実績値は主に各国統計局データを参照。直近および2025年の予測値は <a href="https://www.imf.org/en/Publications/WEO/weo-database/2024/October" target="_blank">IMF World Economic Outlook (Oct 2024)</a> に基づきます。
         </div>
         <ul class="source-list">
             <li class="source-item"><strong>米国 (BEA):</strong> <a href="https://www.bea.gov/data/gdp/gross-domestic-product" target="_blank">https://www.bea.gov/data/gdp/gross-domestic-product</a></li>
@@ -105,7 +117,6 @@
 </div>
 
 <script>
-// --- JavaScript ロジック (変更なし/単位判定とグラフ描画) ---
 const metricNames = {
     "auto_gdp": "名目GDP (兆USD / 兆円)",
     "gdp_nominal_total_trillion_usd": "名目GDP (兆USD)",
